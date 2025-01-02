@@ -31,15 +31,17 @@ class AllProducts extends StatelessWidget {
                   onTap: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=>Singleproduct(index: index)));
                   },
-                  child: Card(
-                    child: Column(
-                      children: [
-                        Image.network(products[index]["image"], width: 75,),
-                        SizedBox(height: 25,),
-                        Text(products[index]["name"]),
-                        SizedBox(height: 25,),
-                        Text(products[index]["price"].toString()),
-                      ],
+                  child: SingleChildScrollView(
+                    child: Card(
+                      child: Column(
+                        children: [
+                          Image.network(products[index]["image"], width: 50,),
+                          SizedBox(height: 25,),
+                          Text(products[index]["name"],style: TextStyle(fontSize: 10),),
+                          SizedBox(height: 25,),
+                          Text(products[index]["price"].toString(),style: TextStyle(fontSize: 10),),
+                        ],
+                      ),
                     ),
                   ),
                 );
